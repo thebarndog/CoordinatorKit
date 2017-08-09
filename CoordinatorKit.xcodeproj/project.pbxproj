@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C613224E1F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61322441F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework */; };
+		C613224E1F3A866E00BD9FF8 /* CoordinatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */; };
 		C61322531F3A866E00BD9FF8 /* CoordinatorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */; };
 		C61322551F3A866E00BD9FF8 /* CoordinatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -23,7 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C61322441F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "CoordinatorKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoordinatorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorKit.h; sourceTree = "<group>"; };
 		C61322481F3A866E00BD9FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C613224D1F3A866E00BD9FF8 /* CoordinatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C613224E1F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework in Frameworks */,
+				C613224E1F3A866E00BD9FF8 /* CoordinatorKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		C61322451F3A866E00BD9FF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C61322441F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework */,
+				C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */,
 				C613224D1F3A866E00BD9FF8 /* CoordinatorKitTests.xctest */,
 			);
 			name = Products;
@@ -115,7 +115,7 @@
 			);
 			name = "CoordinatorKit-iOS";
 			productName = CoordinatorKit;
-			productReference = C61322441F3A866E00BD9FF8 /* CoordinatorKit-iOS.framework */;
+			productReference = C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C613224C1F3A866E00BD9FF8 /* CoordinatorKitTests */ = {
@@ -332,7 +332,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKit;
-				PRODUCT_NAME = "CoordinatorKit-iOS";
+				PRODUCT_NAME = CoordinatorKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -351,7 +351,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKit;
-				PRODUCT_NAME = "CoordinatorKit-iOS";
+				PRODUCT_NAME = CoordinatorKit;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
