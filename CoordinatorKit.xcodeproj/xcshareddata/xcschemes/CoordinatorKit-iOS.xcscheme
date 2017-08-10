@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C61322431F3A866E00BD9FF8"
-               BuildableName = "CoordinatorKit-iOS.framework"
+               BuildableName = "CoordinatorKit.framework"
                BlueprintName = "CoordinatorKit-iOS"
                ReferencedContainer = "container:CoordinatorKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C61322431F3A866E00BD9FF8"
-            BuildableName = "CoordinatorKit-iOS.framework"
+            BuildableName = "CoordinatorKit.framework"
             BlueprintName = "CoordinatorKit-iOS"
             ReferencedContainer = "container:CoordinatorKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C61322431F3A866E00BD9FF8"
-            BuildableName = "CoordinatorKit-iOS.framework"
+            BuildableName = "CoordinatorKit.framework"
             BlueprintName = "CoordinatorKit-iOS"
             ReferencedContainer = "container:CoordinatorKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C61322431F3A866E00BD9FF8"
-            BuildableName = "CoordinatorKit-iOS.framework"
+            BuildableName = "CoordinatorKit.framework"
             BlueprintName = "CoordinatorKit-iOS"
             ReferencedContainer = "container:CoordinatorKit.xcodeproj">
          </BuildableReference>
