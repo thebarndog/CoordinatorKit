@@ -4,12 +4,18 @@ cache:
   - directories:
     - Carthage
 before_install: true
+install:
+  - rvm get stable || true
+  - brew update || true
+  - brew install carthage || true
+  - brew outdated carthage || brew upgrade carthage
 before_script:
   - chmod +x ./script/build
 xcode_project: CoordinatorKit.xcodeproj
 matrix:
   include:
     - script:
+      - carthage bootstrap --no-use-binaries --platform iOS
       - script/build
       xcode_scheme: CoordinatorKit-iOS
       env:
