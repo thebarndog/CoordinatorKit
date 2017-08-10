@@ -2,6 +2,21 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/Feathers.svg)](#cocoapods) [![GitHub release](https://img.shields.io/github/release/startupthekid/CoordinatorKit.svg)](https://github.com/startupthekid/CoordinatorKit/releases) ![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg) ![platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg) ![build](https://travis-ci.org/startupthekid/CoordinatorKit.svg?branch=master)
 
+## Installation
+
+### Cocoapods
+```
+pod `CoordinatorKitSwift`
+```
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+```
+github "startupthekid/CoordinatorKit"
+```
+
 ## What is CoordinatorKit?
 
 CoordinatorKit is an iOS architecture framework written in Swift that provides an alternative design pattern (the coordinator pattern) for building your applications. Simple, robust and extensible, CoordinatorKit allows you to streamline your application's architecture.
