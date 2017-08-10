@@ -31,10 +31,9 @@ What does a coordinator look like exactly?
 class AppDelegate {
   let coordinator = AppCoordinator()
 
-  func application(_ application: UIApplication,
-didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
   coordinator.start()
-}
+  }
 }
 
 class AppCoordinator: Coordinator {
