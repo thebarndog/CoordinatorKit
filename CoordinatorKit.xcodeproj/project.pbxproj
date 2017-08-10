@@ -10,6 +10,14 @@
 		C613224E1F3A866E00BD9FF8 /* CoordinatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */; };
 		C61322531F3A866E00BD9FF8 /* CoordinatorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */; };
 		C61322551F3A866E00BD9FF8 /* CoordinatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C61322601F3A8F2900BD9FF8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */; };
+		C61322621F3A972D00BD9FF8 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */; };
+		C61322641F3A9C7000BD9FF8 /* CoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322631F3A9C7000BD9FF8 /* CoordinatorDelegate.swift */; };
+		C61322661F3B923B00BD9FF8 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322651F3B923B00BD9FF8 /* SceneCoordinator.swift */; };
+		C680E01A1F3BCFB80028A3E4 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E0191F3BCFB80028A3E4 /* Animator.swift */; };
+		C680E01C1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */; };
+		C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01D1F3BD4470028A3E4 /* Stack.swift */; };
+		C680E0201F3BD5790028A3E4 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		C613224D1F3A866E00BD9FF8 /* CoordinatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorKitTests.swift; sourceTree = "<group>"; };
 		C61322541F3A866E00BD9FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Core/Coordinator.swift; sourceTree = "<group>"; };
+		C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticastDelegate.swift; path = Core/MulticastDelegate.swift; sourceTree = "<group>"; };
+		C61322631F3A9C7000BD9FF8 /* CoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoordinatorDelegate.swift; path = Core/CoordinatorDelegate.swift; sourceTree = "<group>"; };
+		C61322651F3B923B00BD9FF8 /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinator.swift; path = Core/SceneCoordinator.swift; sourceTree = "<group>"; };
+		C680E0191F3BCFB80028A3E4 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = Core/Animator.swift; sourceTree = "<group>"; };
+		C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinatorDelegate.swift; path = Core/SceneCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		C680E01D1F3BD4470028A3E4 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Core/Stack.swift; sourceTree = "<group>"; };
+		C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Core/NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,7 @@
 		C61322461F3A866E00BD9FF8 /* CoordinatorKit */ = {
 			isa = PBXGroup;
 			children = (
+				C613225E1F3A8EFD00BD9FF8 /* Core */,
 				C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */,
 				C61322481F3A866E00BD9FF8 /* Info.plist */,
 			);
@@ -84,6 +101,21 @@
 				C61322541F3A866E00BD9FF8 /* Info.plist */,
 			);
 			path = CoordinatorKitTests;
+			sourceTree = "<group>";
+		};
+		C613225E1F3A8EFD00BD9FF8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */,
+				C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */,
+				C61322631F3A9C7000BD9FF8 /* CoordinatorDelegate.swift */,
+				C61322651F3B923B00BD9FF8 /* SceneCoordinator.swift */,
+				C680E0191F3BCFB80028A3E4 /* Animator.swift */,
+				C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */,
+				C680E01D1F3BD4470028A3E4 /* Stack.swift */,
+				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +180,7 @@
 				TargetAttributes = {
 					C61322431F3A866E00BD9FF8 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					C613224C1F3A866E00BD9FF8 = {
@@ -196,6 +229,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C680E01C1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift in Sources */,
+				C680E01A1F3BCFB80028A3E4 /* Animator.swift in Sources */,
+				C680E0201F3BD5790028A3E4 /* NavigationCoordinator.swift in Sources */,
+				C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */,
+				C61322601F3A8F2900BD9FF8 /* Coordinator.swift in Sources */,
+				C61322621F3A972D00BD9FF8 /* MulticastDelegate.swift in Sources */,
+				C61322641F3A9C7000BD9FF8 /* CoordinatorDelegate.swift in Sources */,
+				C61322661F3B923B00BD9FF8 /* SceneCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +363,7 @@
 		C61322591F3A866E00BD9FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -334,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKit;
 				PRODUCT_NAME = CoordinatorKit;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +384,7 @@
 		C613225A1F3A866E00BD9FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -360,6 +404,7 @@
 		C613225C1F3A866E00BD9FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CoordinatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKitTests;
@@ -371,6 +416,7 @@
 		C613225D1F3A866E00BD9FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CoordinatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKitTests;
