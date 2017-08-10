@@ -133,7 +133,6 @@ open class Coordinator: NSObject {
     /// 1) The parent coordinator adds itself as a delegate of the child.
     /// 2) The coordinator gets inserted into the set of children.
     ///
-    ///
     /// - Parameter coordinator: Coordinator to start.
     public final func start<C: Coordinator>(coordinator: C) {
         guard !hasChild(coordinator) else { return }
