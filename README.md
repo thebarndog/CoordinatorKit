@@ -32,7 +32,7 @@ class AppDelegate {
   let coordinator = AppCoordinator()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-  coordinator.start()
+    coordinator.start()
   }
 }
 
@@ -59,59 +59,58 @@ Interestingly, coordinators are not limited to having only one active child. A `
 To add and remove children from a coordinator, a set of convenience methods have been provided:
 
 ```swift
-// MARK: - Child Coordinators
 
-    /// Start a child coordinator.
-    ///
-    /// This method should *always* be used rather than calling `coordinator.start()`
-    /// directly. Starting a child coordinator has two important side-effects:
-    /// 1) The parent coordinator adds itself as a delegate of the child.
-    /// 2) The coordinator gets inserted into the set of children.
-    ///
-    /// - Parameter coordinator: Coordinator to start.
-    public final func start<C: Coordinator>(coordinator: C) {
-        guard !hasChild(coordinator) else { return }
-        coordinator.delegate += self
-        children.insert(coordinator)
-        coordinator.start()
-    }
+/// Start a child coordinator.
+///
+/// This method should *always* be used rather than calling `coordinator.start()`
+/// directly. Starting a child coordinator has two important side-effects:
+/// 1) The parent coordinator adds itself as a delegate of the child.
+/// 2) The coordinator gets inserted into the set of children.
+///
+/// - Parameter coordinator: Coordinator to start.
+public final func start<C: Coordinator>(coordinator: C) {
+    guard !hasChild(coordinator) else { return }
+    coordinator.delegate += self
+    children.insert(coordinator)
+    coordinator.start()
+}
 
-    /// Stops the given child coordinator.
-    ///
-    /// This method *must* be used instead of calling `coordinator.stop()` directly.
-    /// Stopping a child coordinator has two important side-effects:
-    /// 1) The parent removes itself as a delegate.
-    /// 2) The coordinator is removed from the list of children.
-    ///
-    /// - Parameter coordinator: Coordinator to stop.
-    public final func stop<C: Coordinator>(coordinator: C) {
-        guard hasChild(coordinator) else { return }
-        coordinator.delegate -= self
-        children.remove(coordinator)
-        coordinator.stop()
-    }
+/// Stops the given child coordinator.
+///
+/// This method *must* be used instead of calling `coordinator.stop()` directly.
+/// Stopping a child coordinator has two important side-effects:
+/// 1) The parent removes itself as a delegate.
+/// 2) The coordinator is removed from the list of children.
+///
+/// - Parameter coordinator: Coordinator to stop.
+public final func stop<C: Coordinator>(coordinator: C) {
+    guard hasChild(coordinator) else { return }
+    coordinator.delegate -= self
+    children.remove(coordinator)
+    coordinator.stop()
+}
 
-    /// Pauses the given child coordinator.
-    ///
-    /// This method is a wrapper function for convenience and consistency.
-    ///
-    /// - Parameter coordinator: Coordinator to pause.
-    public final func pause<C: Coordinator>(coordinator: C) {
-        guard hasChild(coordinator) else { return }
-        guard !coordinator.isPaused else { return }
-        coordinator.pause()
-    }
+/// Pauses the given child coordinator.
+///
+/// This method is a wrapper function for convenience and consistency.
+///
+/// - Parameter coordinator: Coordinator to pause.
+public final func pause<C: Coordinator>(coordinator: C) {
+    guard hasChild(coordinator) else { return }
+    guard !coordinator.isPaused else { return }
+    coordinator.pause()
+}
 
-    /// Resumes the given child coordinator.
-    ///
-    /// This method is a wrapper function for convenience and consistency.
-    ///
-    /// - Parameter coordinator: Coordinator to resume.
-    public final func resume<C: Coordinator>(coordinator: C) {
-        guard hasChild(coordinator) else { return }
-        guard coordinator.isPaused else { return }
-        coordinator.resume()
-    }
+/// Resumes the given child coordinator.
+///
+/// This method is a wrapper function for convenience and consistency.
+///
+/// - Parameter coordinator: Coordinator to resume.
+public final func resume<C: Coordinator>(coordinator: C) {
+    guard hasChild(coordinator) else { return }
+    guard coordinator.isPaused else { return }
+    coordinator.resume()
+}
 
 ```
 
