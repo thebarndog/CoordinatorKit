@@ -22,3 +22,8 @@ matrix:
         - XCODE_SDK=iphonesimulator
         - XCODE_ACTION="build-for-testing test-without-building"
         - XCODE_DESTINATION="platform=iOS Simulator,name=iPhone 6s"
+    - script:
+      - pod repo update
+      - travis_wait 30 pod lib lint CoordinatorKit.podspec
+      env:
+        - JOB=PODSPEC
