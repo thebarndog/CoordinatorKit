@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C613224E1F3A866E00BD9FF8 /* CoordinatorKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */; };
-		C61322531F3A866E00BD9FF8 /* CoordinatorKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */; };
 		C61322551F3A866E00BD9FF8 /* CoordinatorKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C61322601F3A8F2900BD9FF8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */; };
 		C61322621F3A972D00BD9FF8 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */; };
@@ -18,6 +17,13 @@
 		C680E01C1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */; };
 		C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01D1F3BD4470028A3E4 /* Stack.swift */; };
 		C680E0201F3BD5790028A3E4 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */; };
+		C680E0241F3CDF4F0028A3E4 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C680E0221F3CDF4F0028A3E4 /* Nimble.framework */; };
+		C680E0251F3CDF4F0028A3E4 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C680E0231F3CDF4F0028A3E4 /* Quick.framework */; };
+		C680E02B1F3CDF950028A3E4 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C680E0221F3CDF4F0028A3E4 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C680E02C1F3CDF950028A3E4 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C680E0231F3CDF4F0028A3E4 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C680E02E1F3CDFC10028A3E4 /* CoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E02D1F3CDFC10028A3E4 /* CoordinatorSpec.swift */; };
+		C680E0301F3CE1650028A3E4 /* MulticastDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E02F1F3CE1650028A3E4 /* MulticastDelegateSpec.swift */; };
+		C680E0321F3CF0860028A3E4 /* StackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E0311F3CF0860028A3E4 /* StackSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +36,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C680E0261F3CDF710028A3E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C680E02B1F3CDF950028A3E4 /* Nimble.framework in CopyFiles */,
+				C680E02C1F3CDF950028A3E4 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C61322441F3A866E00BD9FF8 /* CoordinatorKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoordinatorKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C61322471F3A866E00BD9FF8 /* CoordinatorKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorKit.h; sourceTree = "<group>"; };
 		C61322481F3A866E00BD9FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C613224D1F3A866E00BD9FF8 /* CoordinatorKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorKitTests.swift; sourceTree = "<group>"; };
 		C61322541F3A866E00BD9FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = Core/Coordinator.swift; sourceTree = "<group>"; };
 		C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticastDelegate.swift; path = Core/MulticastDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +64,11 @@
 		C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinatorDelegate.swift; path = Core/SceneCoordinatorDelegate.swift; sourceTree = "<group>"; };
 		C680E01D1F3BD4470028A3E4 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Core/Stack.swift; sourceTree = "<group>"; };
 		C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Core/NavigationCoordinator.swift; sourceTree = "<group>"; };
+		C680E0221F3CDF4F0028A3E4 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		C680E0231F3CDF4F0028A3E4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		C680E02D1F3CDFC10028A3E4 /* CoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorSpec.swift; sourceTree = "<group>"; };
+		C680E02F1F3CE1650028A3E4 /* MulticastDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegateSpec.swift; sourceTree = "<group>"; };
+		C680E0311F3CF0860028A3E4 /* StackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +84,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C613224E1F3A866E00BD9FF8 /* CoordinatorKit.framework in Frameworks */,
+				C680E0241F3CDF4F0028A3E4 /* Nimble.framework in Frameworks */,
+				C680E0251F3CDF4F0028A3E4 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +98,7 @@
 				C61322461F3A866E00BD9FF8 /* CoordinatorKit */,
 				C61322511F3A866E00BD9FF8 /* CoordinatorKitTests */,
 				C61322451F3A866E00BD9FF8 /* Products */,
+				C680E0211F3CDF4F0028A3E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +124,10 @@
 		C61322511F3A866E00BD9FF8 /* CoordinatorKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C61322521F3A866E00BD9FF8 /* CoordinatorKitTests.swift */,
 				C61322541F3A866E00BD9FF8 /* Info.plist */,
+				C680E02D1F3CDFC10028A3E4 /* CoordinatorSpec.swift */,
+				C680E02F1F3CE1650028A3E4 /* MulticastDelegateSpec.swift */,
+				C680E0311F3CF0860028A3E4 /* StackSpec.swift */,
 			);
 			path = CoordinatorKitTests;
 			sourceTree = "<group>";
@@ -116,6 +145,15 @@
 				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		C680E0211F3CDF4F0028A3E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C680E0221F3CDF4F0028A3E4 /* Nimble.framework */,
+				C680E0231F3CDF4F0028A3E4 /* Quick.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +195,7 @@
 				C61322491F3A866E00BD9FF8 /* Sources */,
 				C613224A1F3A866E00BD9FF8 /* Frameworks */,
 				C613224B1F3A866E00BD9FF8 /* Resources */,
+				C680E0261F3CDF710028A3E4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -244,7 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C61322531F3A866E00BD9FF8 /* CoordinatorKitTests.swift in Sources */,
+				C680E0301F3CE1650028A3E4 /* MulticastDelegateSpec.swift in Sources */,
+				C680E02E1F3CDFC10028A3E4 /* CoordinatorSpec.swift in Sources */,
+				C680E0321F3CF0860028A3E4 /* StackSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +446,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoordinatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKitTests;
@@ -417,6 +462,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoordinatorKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swoopystudios.CoordinatorKitTests;
