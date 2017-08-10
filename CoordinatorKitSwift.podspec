@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "CoordinatorKit"
+  s.name         = "CoordinatorKitSwift"
   # Version goes here and will be used to access the git tag later on, once we have a first release.
   s.version      = "1.0.0"
   s.summary      = "iOS architecture framework"
