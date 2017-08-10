@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Simple stack data structure.
 public struct Stack<Element> {
     
     private var storage: [Element] = []
@@ -19,6 +20,8 @@ public struct Stack<Element> {
     public var count: Int {
         return storage.count
     }
+    
+    public init() {}
     
     mutating public func push(_ element: Element) {
         storage.append(element)

@@ -16,6 +16,7 @@ public protocol Animator {
     
 }
 
+/// Default animator for scene coordinators.
 public struct SceneAnimator: Animator {
     
     public func animate<T: UIViewController, U: UIViewController>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>) {
@@ -28,6 +29,7 @@ public struct SceneAnimator: Animator {
     
 }
 
+/// Animator used by the `NavigationCoordinator` class.
 public struct NavigationAnimator: Animator {
     
     public func animate<T: UIViewController, U: UIViewController>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>) {
