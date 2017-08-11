@@ -209,19 +209,19 @@ open class Coordinator: NSObject {
     
     // MARK: - CoordinatorDelegate
     
-    public func coordinatorDidStart(_ coordinator: Coordinator) {
+    open func coordinatorDidStart(_ coordinator: Coordinator) {
         
     }
     
-    public func coordinatorDidStop(_ coordinator: Coordinator) {
+    open func coordinatorDidStop(_ coordinator: Coordinator) {
         
     }
     
-    public func coordinatorDidPause(_ coordinator: Coordinator) {
+    open func coordinatorDidPause(_ coordinator: Coordinator) {
         
     }
     
-    public func coordinatorDidResume(_ coordinator: Coordinator) {
+    open func coordinatorDidResume(_ coordinator: Coordinator) {
         
     }
     

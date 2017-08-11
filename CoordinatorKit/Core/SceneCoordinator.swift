@@ -57,7 +57,7 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
     
     // MARK: - SceneCoordinatorDelegate
     
-    public func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) where C : UIViewController {
+    open func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) where C : UIViewController {
         // no-op
     }
     
