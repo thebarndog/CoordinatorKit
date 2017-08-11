@@ -24,6 +24,7 @@
 		C680E02E1F3CDFC10028A3E4 /* CoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E02D1F3CDFC10028A3E4 /* CoordinatorSpec.swift */; };
 		C680E0301F3CE1650028A3E4 /* MulticastDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E02F1F3CE1650028A3E4 /* MulticastDelegateSpec.swift */; };
 		C680E0321F3CF0860028A3E4 /* StackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E0311F3CF0860028A3E4 /* StackSpec.swift */; };
+		C6B0DDAE1F3E520F003818D1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C680E02D1F3CDFC10028A3E4 /* CoordinatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorSpec.swift; sourceTree = "<group>"; };
 		C680E02F1F3CE1650028A3E4 /* MulticastDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegateSpec.swift; sourceTree = "<group>"; };
 		C680E0311F3CF0860028A3E4 /* StackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackSpec.swift; sourceTree = "<group>"; };
+		C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabCoordinator.swift; path = Core/TabCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */,
 				C680E01D1F3BD4470028A3E4 /* Stack.swift */,
 				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
+				C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C680E01C1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift in Sources */,
+				C6B0DDAE1F3E520F003818D1 /* TabCoordinator.swift in Sources */,
 				C680E01A1F3BCFB80028A3E4 /* Animator.swift in Sources */,
 				C680E0201F3BD5790028A3E4 /* NavigationCoordinator.swift in Sources */,
 				C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */,
