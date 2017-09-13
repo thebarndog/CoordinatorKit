@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+public typealias SceneCompletionBlock = () -> ()
+
 /// Coordinator used to represent a scene or a single screen in an application.
 /// Scene coordinators have a 1:1 relationship with a view controller that they
 /// manage.
@@ -39,20 +41,22 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
     /// scene coordinator and additionally calls the animator, if any, to handle any 
     /// animatons/transitions that need to happen.
     ///
+    /// - Note The coordinator uses the animator of the coordinator being started.
     /// - Parameter sceneCoordinator: Child coordinator to start.
-    public final func start<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>) {
+    public final func start<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.start(coordinator: sceneCoordinator)
-        animator?.animate(from: self, to: sceneCoordinator)
+        sceneCoordinator.animator?.animate(from: self, to: sceneCoordinator, completion: completion)
     }
     
     /// Specialized `stop` method for scene coordinators. Stops the given child
     /// scene coordinator and additionally calls the animator, if any, to handle
     /// dismissal animatons.
     ///
+    /// - Note The coordinator uses the animator of the coordinator being stopped.
     /// - Parameter sceneCoordinator: Child coordinator to stop.
-    public final func stop<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>) {
+    public final func stop<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.stop(coordinator: sceneCoordinator)
-        animator?.dismiss(coordinator: sceneCoordinator)
+        sceneCoordinator.animator?.dismiss(coordinator: sceneCoordinator, completion: completion)
     }
     
     // MARK: - SceneCoordinatorDelegate
