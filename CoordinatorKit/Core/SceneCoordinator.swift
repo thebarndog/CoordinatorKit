@@ -43,7 +43,7 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
     ///
     /// - Note The coordinator uses the animator of the coordinator being started.
     /// - Parameter sceneCoordinator: Child coordinator to start.
-    public final func start<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
+    public final func start<C>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.start(coordinator: sceneCoordinator)
         sceneCoordinator.animator?.animate(from: self, to: sceneCoordinator, completion: completion)
     }
@@ -54,14 +54,14 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
     ///
     /// - Note The coordinator uses the animator of the coordinator being stopped.
     /// - Parameter sceneCoordinator: Child coordinator to stop.
-    public final func stop<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
+    public final func stop<C>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.stop(coordinator: sceneCoordinator)
         sceneCoordinator.animator?.dismiss(coordinator: sceneCoordinator, completion: completion)
     }
     
     // MARK: - SceneCoordinatorDelegate
     
-    open func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) where C : UIViewController {
+    open func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) {
         // no-op
     }
     
