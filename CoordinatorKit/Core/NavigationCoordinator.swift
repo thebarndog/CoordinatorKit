@@ -22,7 +22,7 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
     
     // MARK: - Initialization
     
-    required public init<C: UIViewController>(rootCoordinator: SceneCoordinator<C>) {
+    required public init<C>(rootCoordinator: SceneCoordinator<C>) {
         self.rootCoordinator = rootCoordinator
         super.init()
         animator = NavigationAnimator()
@@ -53,7 +53,7 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
     /// the root coordinator wasn't set via the initializer already.
     ///
     /// - Parameter coordinator: Root coordinator object.
-    public final func setRootCoordinator<C: UIViewController>(_ coordinator: SceneCoordinator<C>) {
+    public final func setRootCoordinator<C>(_ coordinator: SceneCoordinator<C>) {
         guard coordinatorStack.isEmpty, controllerStack.isEmpty, rootCoordinator == nil else {
             return
         }
@@ -68,7 +68,7 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
     /// - Parameters:
     ///   - coordinator: Coordinator to push.
     ///   - animated: Should the push be animated.
-    public func pushCoordinator<C: UIViewController>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
+    public func pushCoordinator<C>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
         if let topCoordinator = coordinatorStack.peek() {
             pause(coordinator: topCoordinator)
         }
@@ -112,7 +112,7 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
         rootCoordinator = nil
     }
     
-    override public func coordinatorDidRequestDismissal<C: UIViewController>(_ coordinator: SceneCoordinator<C>) {
+    override public func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) {
         // If the root coordinator is requesting dismisal, we request dismissal from our parent
         if coordinator === rootCoordinator {
             delegate => {

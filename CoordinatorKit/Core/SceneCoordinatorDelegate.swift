@@ -14,6 +14,6 @@ public protocol SceneCoordinatorDelegate: CoordinatorDelegate {
     /// Notifies the delegate that the given coordinator is requesting to be dismissed.
     ///
     /// - Parameter coordinator: Coordinator that's requesting dismissal.
-    func coordinatorDidRequestDismissal<C: UIViewController>(_ coordinator: SceneCoordinator<C>)
+    func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>)
     
 }
