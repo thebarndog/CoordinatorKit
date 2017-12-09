@@ -1,10 +1,11 @@
 # CoordinatorKit
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/CoordinatorKitSwift.svg)](#cocoapods) [![GitHub release](https://img.shields.io/github/release/startupthekid/CoordinatorKit.svg)](https://github.com/startupthekid/CoordinatorKit/releases) ![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg) ![platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg) [![Build Status](https://travis-ci.org/startupthekid/CoordinatorKit.svg?branch=master)](https://travis-ci.org/startupthekid/CoordinatorKit)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/CoordinatorKitSwift.svg)](#cocoapods) [![GitHub release](https://img.shields.io/github/release/startupthekid/CoordinatorKit.svg)](https://github.com/startupthekid/CoordinatorKit/releases) ![Swift 3.0.x](https://img.shields.io/badge/Swift-4.0.x-orange.svg) ![platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg) [![Build Status](https://travis-ci.org/startupthekid/CoordinatorKit.svg?branch=master)](https://travis-ci.org/startupthekid/CoordinatorKit)
 
 ## Installation
 
 ### Cocoapods
+
 ```
 pod `CoordinatorKitSwift`
 ```

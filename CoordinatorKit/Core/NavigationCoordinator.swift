@@ -25,7 +25,6 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
     required public init<C>(rootCoordinator: SceneCoordinator<C>) {
         self.rootCoordinator = rootCoordinator
         super.init()
-        animator = NavigationAnimator()
         rootViewController = UINavigationController(rootViewController: rootCoordinator.rootViewController)
         coordinatorStack.push(rootCoordinator)
         controllerStack.push(rootCoordinator.rootViewController)
@@ -35,7 +34,6 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
     required public init() {
         rootCoordinator = nil
         super.init()
-        animator = NavigationAnimator()
         rootViewController = UINavigationController()
         configure()
     }
