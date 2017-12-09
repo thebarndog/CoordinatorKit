@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/startupthekid/CoordinatorKit.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/startupthekid/CoordinatorKit.git", :tag => "v#{s.version}" }
 
   s.default_subspec = "Core"
 
