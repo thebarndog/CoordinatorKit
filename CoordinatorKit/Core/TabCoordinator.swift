@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TabCoordinator: SceneCoordinator<UITabBarController> {
+open class TabCoordinator: SceneCoordinator<UITabBarController>, UITabBarControllerDelegate {
     
     private let coordinators: [Coordinator]
     private let controllers: [UIViewController]
@@ -93,5 +93,3 @@ open class TabCoordinator: SceneCoordinator<UITabBarController> {
     }
     
 }
-
-extension TabCoordinator: UITabBarControllerDelegate {}

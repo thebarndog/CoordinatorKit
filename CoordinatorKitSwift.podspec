@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "CoordinatorKitSwift"
   # Version goes here and will be used to access the git tag later on, once we have a first release.
-  s.version      = "1.1.3"
+  s.version      = "1.2.0"
   s.summary      = "iOS architecture framework"
   s.description  = <<-DESC
                    Swift library for architecting iOS applications using the
@@ -16,6 +16,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/startupthekid/CoordinatorKit.git", :tag => "v#{s.version}" }
 
   s.default_subspec = "Core"
+
+  s.swift_version = "4.2"
 
   s.subspec "Core" do |ss|
     ss.source_files = "CoordinatorKit/Core/*.{swift}"
