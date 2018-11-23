@@ -26,6 +26,7 @@
 		C680E0321F3CF0860028A3E4 /* StackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C680E0311F3CF0860028A3E4 /* StackSpec.swift */; };
 		C6B0DDAE1F3E520F003818D1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */; };
 		F30A3FD421A81DB300DA500E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A3FD321A81DB300DA500E /* Extensions.swift */; };
+		F30A3FD621A8249F00DA500E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A3FD521A8249F00DA500E /* Storyboarded.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C680E0311F3CF0860028A3E4 /* StackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackSpec.swift; sourceTree = "<group>"; };
 		C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabCoordinator.swift; path = Core/TabCoordinator.swift; sourceTree = "<group>"; };
 		F30A3FD321A81DB300DA500E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Core/Extensions.swift; sourceTree = "<group>"; };
+		F30A3FD521A8249F00DA500E /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboarded.swift; path = Core/Storyboarded.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				C680E0191F3BCFB80028A3E4 /* Animator.swift */,
 				C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */,
 				C680E01D1F3BD4470028A3E4 /* Stack.swift */,
+				F30A3FD521A8249F00DA500E /* Storyboarded.swift */,
 				F30A3FD321A81DB300DA500E /* Extensions.swift */,
 				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
 				C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */,
@@ -282,6 +285,7 @@
 				C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */,
 				F30A3FD421A81DB300DA500E /* Extensions.swift in Sources */,
 				C61322601F3A8F2900BD9FF8 /* Coordinator.swift in Sources */,
+				F30A3FD621A8249F00DA500E /* Storyboarded.swift in Sources */,
 				C61322621F3A972D00BD9FF8 /* MulticastDelegate.swift in Sources */,
 				C61322641F3A9C7000BD9FF8 /* CoordinatorDelegate.swift in Sources */,
 				C61322661F3B923B00BD9FF8 /* SceneCoordinator.swift in Sources */,

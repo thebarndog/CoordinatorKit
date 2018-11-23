@@ -103,3 +103,12 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
 }
 
 extension SceneCoordinator: SceneCoordinatorDelegate {}
+
+extension SceneCoordinator where Controller : Storyboarded {
+    
+    public static func storyboardInstance() -> Self {
+        
+        return self.init(storyboard: Controller.storyboard)
+        
+    }
+}
