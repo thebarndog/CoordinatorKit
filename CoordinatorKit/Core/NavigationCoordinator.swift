@@ -38,6 +38,14 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
         configure()
     }
     
+    required public init(nibNamed nibName: String) {
+        fatalError("init(nibNamed:) has not been implemented")
+    }
+    
+    required public init(storyboard: UIStoryboard, identifier: String) {
+        fatalError("init(storyboard:identifier:) has not been implemented")
+    }
+    
     // MARK: - Configuration
     
     private func configure() {

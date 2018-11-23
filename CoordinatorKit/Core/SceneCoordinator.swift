@@ -23,12 +23,12 @@ open class SceneCoordinator<Controller: UIViewController>: Coordinator {
         super.init()
     }
     
-    public init(storyboard: UIStoryboard, identifier: String = Controller.classString) {
+    required public init(storyboard: UIStoryboard, identifier: String = Controller.classString) {
         rootViewController = storyboard.instantiateViewController(withIdentifier: identifier) as! Controller
         super.init()
     }
     
-    public init(nibNamed nibName: String = Controller.classString) {
+    required public init(nibNamed nibName: String = Controller.classString) {
         
         let items = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)!
         for item in items {

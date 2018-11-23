@@ -58,6 +58,14 @@ open class TabCoordinator: SceneCoordinator<UITabBarController>, UITabBarControl
         fatalError("init() has not been implemented")
     }
     
+    required public init(nibNamed nibName: String) {
+        fatalError("init(nibNamed:) has not been implemented")
+    }
+    
+    required public init(storyboard: UIStoryboard, identifier: String) {
+        fatalError("init(storyboard:identifier:) has not been implemented")
+    }
+    
     private func commonInit() {
         rootViewController.setViewControllers(controllers, animated: false)
         rootViewController.delegate = self
