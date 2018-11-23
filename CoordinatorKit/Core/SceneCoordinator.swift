@@ -15,10 +15,29 @@ public typealias SceneCompletionBlock = () -> ()
 /// Scene coordinators have a 1:1 relationship with a view controller that they
 /// manage.
 open class SceneCoordinator<Controller: UIViewController>: Coordinator {
-
+    
     public var rootViewController: Controller
     
     required public init() {
+        rootViewController = Controller()
+        super.init()
+    }
+    
+    public init(storyboard: UIStoryboard, identifier: String = Controller.classString) {
+        rootViewController = storyboard.instantiateViewController(withIdentifier: identifier) as! Controller
+        super.init()
+    }
+    
+    public init(nibNamed nibName: String = Controller.classString) {
+        
+        let items = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)!
+        for item in items {
+            guard let vc = item as? Controller else { continue }
+            rootViewController = vc
+            super.init()
+            return
+        }
+        
         rootViewController = Controller()
         super.init()
     }
