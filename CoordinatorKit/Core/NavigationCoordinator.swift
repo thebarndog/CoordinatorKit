@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public final class NavigationCoordinator: SceneCoordinator<UINavigationController>, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Coordinators
     
@@ -158,4 +158,21 @@ public final class NavigationCoordinator: SceneCoordinator<UINavigationControlle
         return true
     }
     
+    // MARK: - Animation
+    
+    /// Given a child that's being presented on `self`, return the appropriate animator, if any.
+    ///
+    /// - Parameter child: Child coordinator.
+    /// - Returns: Animator.
+    override public func animator<C>(forPresentingChild child: SceneCoordinator<C>) -> Animator? {
+        return NavigationAnimator()
+    }
+    
+    /// Given a child that's being dismissed on `self`, return the appropriate animator, if any.
+    ///
+    /// - Parameter child: Child coordinator.
+    /// - Returns: Animator.
+    override public func animator<C>(forDismissingChild child: SceneCoordinator<C>) -> Animator? {
+        return NavigationAnimator()
+    }
 }
