@@ -95,6 +95,50 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
         resume(coordinator: topCoordinator)
     }
     
+    /// Pops to a given coordinator on the navigation stack.
+    ///
+    /// - Parameters:
+    ///   - coordinator: Coordinator to pop to.
+    ///   - animated: Should the pop be animated.
+    public func popToCoordinator<C>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
+        
+        guard children.contains(coordinator) else { return }
+        
+        while coordinatorStack.peek() != coordinator {
+            
+            guard let topCoordinator = coordinatorStack.peek() as? SceneCoordinator else { continue }
+            guard rootCoordinator != topCoordinator else { break }
+            stop(coordinator: topCoordinator)
+            coordinatorStack.pop()
+            controllerStack.pop()
+        }
+        
+        rootViewController.popToViewController(coordinator.rootViewController, animated: animated)
+        
+        guard let topCoordinator = coordinatorStack.peek(), topCoordinator.isPaused else { return }
+        resume(coordinator: topCoordinator)
+    }
+    
+    /// Pops to the root coordinator on the navigation stack.
+    ///
+    /// - Parameters:
+    ///   - animated: Should the pop be animated.
+    public func popToRootCoordinator(animated: Bool = true) {
+        
+        while coordinatorStack.peek() != rootCoordinator {
+            
+            guard let topCoordinator = coordinatorStack.peek() as? SceneCoordinator else { continue }
+            stop(coordinator: topCoordinator)
+            coordinatorStack.pop()
+            controllerStack.pop()
+        }
+        
+        rootViewController.popToRootViewController(animated: animated)
+        
+        guard let topCoordinator = coordinatorStack.peek(), topCoordinator == rootCoordinator else { return }
+        resume(coordinator: topCoordinator)
+    }
+    
     /// Hide or show the navigation bar.
     ///
     /// - Parameters:

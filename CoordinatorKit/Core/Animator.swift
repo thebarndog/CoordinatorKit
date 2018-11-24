@@ -47,7 +47,8 @@ public struct NavigationAnimator: Animator {
     }
     
     public func dismiss<T>(coordinator: SceneCoordinator<T>, completion: AnimationCallback? = nil) {
-        coordinator.rootViewController.dismiss(animated: true, completion: completion)
+        
+        guard let navigationCoordinator = coordinator.parent as? NavigationCoordinator else { return }
+        navigationCoordinator.rootViewController.popViewController(animated: true)
     }
-    
 }
