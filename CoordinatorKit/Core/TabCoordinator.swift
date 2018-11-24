@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TabCoordinator: SceneCoordinator<UITabBarController>, UITabBarControllerDelegate {
+open class TabCoordinator<T: UITabBarController>: SceneCoordinator<T>, UITabBarControllerDelegate {
     
     private let coordinators: [Coordinator]
     private let controllers: [UIViewController]
@@ -58,7 +58,7 @@ open class TabCoordinator: SceneCoordinator<UITabBarController>, UITabBarControl
         fatalError("init() has not been implemented")
     }
     
-    public required init(rootViewController: UITabBarController) {
+    public required init(rootViewController: T) {
         fatalError("init(rootViewController:) has not been implemented")
     }
     
