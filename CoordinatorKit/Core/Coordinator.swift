@@ -40,7 +40,9 @@ open class Coordinator: NSObject {
     
     // MARK: - Children
     
-    private var children = Set<Coordinator>()
+    private(set) var children = Set<Coordinator>()
+    
+    private(set) weak var parent: Coordinator?
     
     // MARK: - Delegate
     
@@ -138,6 +140,7 @@ open class Coordinator: NSObject {
         guard !hasChild(coordinator) else { return }
         coordinator.delegate += self
         children.insert(coordinator)
+        coordinator.parent = self
         coordinator.start()
     }
     
@@ -153,6 +156,7 @@ open class Coordinator: NSObject {
         guard hasChild(coordinator) else { return }
         coordinator.delegate -= self
         children.remove(coordinator)
+        coordinator.parent = nil
         coordinator.stop()
     }
     
