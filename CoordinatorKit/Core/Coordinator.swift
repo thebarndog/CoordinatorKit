@@ -40,9 +40,9 @@ open class Coordinator: NSObject {
     
     // MARK: - Children
     
-    private(set) var children = Set<Coordinator>()
+    private(set) public var children = Set<Coordinator>()
     
-    private(set) weak var parent: Coordinator?
+    private(set) public weak var parent: Coordinator?
     
     // MARK: - Delegate
     
@@ -94,12 +94,19 @@ open class Coordinator: NSObject {
     
     // MARK: - Querying
     
+    /// Asks the coordinator for any children that are in the given state.
+    ///
+    /// - Parameter state: Coordinator state.
+    /// - Returns: Set<Coordinator>, the list of child coordinators.
+    public func children(inState state: State) -> Set<Coordinator> {
+        return children.filter { $0.state == state }
+    }
     /// Asks the coordinator if it has any children that are in the given state.
     ///
     /// - Parameter state: Coordinator state.
     /// - Returns: Bool, true if any children coordinators are in the given state.
     public func hasChildren(inState state: State) -> Bool {
-        return !children.filter { $0.state == state }.isEmpty
+        return !children(inState: state).isEmpty
     }
     
     /// Query for the number of children that are currently in the given state.
@@ -107,7 +114,7 @@ open class Coordinator: NSObject {
     /// - Parameter state: Coordinator state.
     /// - Returns: Number of children that are in the given state.
     public final func numberOfChildren(inState state: State) -> Int {
-        return children.filter { $0.state == state }.count
+        return children(inState: state).count
     }
     
     /// Query the coordinator if it contains the given coordinator among it's children.
