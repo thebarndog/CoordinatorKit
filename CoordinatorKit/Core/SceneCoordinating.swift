@@ -14,15 +14,13 @@ public protocol SceneCoordinating: class {
     static func instance() -> Self    
 }
 
-extension UIViewController: SceneCoordinating {
+extension SceneCoordinating where Self : NSObject {
     
-    public static func instance() -> Self {
-        
-        return self.init()
+    public static func instance() -> Self { return self.init()
     }
 }
 
-extension SceneCoordinating where Self : Storyboarded {
+extension SceneCoordinating where Self : (NSObject & Storyboarded) {
     
     public static func instance() -> Self {
         
@@ -30,10 +28,12 @@ extension SceneCoordinating where Self : Storyboarded {
     }
 }
 
-extension SceneCoordinating where Self : NibLoadable {
+extension SceneCoordinating where Self : (NSObject & NibLoadable) {
     
     public static func instance() -> Self {
         
         return nibInstance()
     }
 }
+
+extension UIViewController: SceneCoordinating { }
