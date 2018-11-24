@@ -38,12 +38,10 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
         configure()
     }
     
-    required public init(nibNamed nibName: String) {
-        fatalError("init(nibNamed:) has not been implemented")
-    }
-    
-    required public init(storyboard: UIStoryboard, identifier: String) {
-        fatalError("init(storyboard:identifier:) has not been implemented")
+    public required init(rootViewController: UINavigationController) {
+        rootCoordinator = nil
+        super.init()
+        self.rootViewController = rootViewController
     }
     
     // MARK: - Configuration

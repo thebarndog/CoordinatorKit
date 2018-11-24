@@ -23,6 +23,11 @@ open class SceneCoordinator<Controller: SceneCoordinating>: Coordinator {
         super.init()
     }
     
+    required public init(rootViewController: Controller) {
+        self.rootViewController = rootViewController
+        super.init()
+    }
+    
     // MARK: - Animation
 
     /// Given a child that's being presented on `self`, return the appropriate animator, if any.
@@ -75,3 +80,20 @@ open class SceneCoordinator<Controller: SceneCoordinating>: Coordinator {
 }
 
 extension SceneCoordinator: SceneCoordinatorDelegate {}
+
+extension SceneCoordinator where Controller : Storyboarded {
+    
+    public static func storyboardInstance() -> Self {
+        
+        return self.init(rootViewController: Controller.storyboardInstance())
+        
+    }
+}
+
+extension SceneCoordinator where Controller : NibLoadable {
+    
+    public static func nibInstance() -> Self {
+        
+        return self.init(rootViewController: Controller.nibInstance())
+    }
+}
