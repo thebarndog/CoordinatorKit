@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
+open class NavigationCoordinator<N: UINavigationController>: SceneCoordinator<N>, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
     // MARK: - Coordinators
     
@@ -25,7 +25,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     required public init<C>(rootCoordinator: SceneCoordinator<C>) {
         self.rootCoordinator = rootCoordinator
         super.init()
-        rootViewController = UINavigationController(rootViewController: rootCoordinator.rootViewController)
+        rootViewController = N(rootViewController: rootCoordinator.rootViewController)
         coordinatorStack.push(rootCoordinator)
         controllerStack.push(rootCoordinator.rootViewController)
         configure()
@@ -34,11 +34,11 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     required public init() {
         rootCoordinator = nil
         super.init()
-        rootViewController = UINavigationController()
+        rootViewController = N()
         configure()
     }
     
-    public required init(rootViewController: UINavigationController) {
+    public required init(rootViewController: N) {
         rootCoordinator = nil
         super.init()
         self.rootViewController = rootViewController
@@ -150,20 +150,20 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     }
     
     // MARK: - Coordinator
-    override public func start() {
+    override open func start() {
         super.start()
         guard let root = rootCoordinator else { return }
         start(coordinator: root)
     }
     
-    override public func stop() {
+    override open func stop() {
         super.stop()
         coordinatorStack.removeAll()
         controllerStack.removeAll()
         rootCoordinator = nil
     }
     
-    override public func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) {
+    override open func coordinatorDidRequestDismissal<C>(_ coordinator: SceneCoordinator<C>) {
         // If the root coordinator is requesting dismisal, we request dismissal from our parent
         if coordinator === rootCoordinator {
             delegate => {
@@ -209,7 +209,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     ///
     /// - Parameter child: Child coordinator.
     /// - Returns: Animator.
-    override public func animator<C>(forPresentingChild child: SceneCoordinator<C>) -> Animator? {
+    override open func animator<C>(forPresentingChild child: SceneCoordinator<C>) -> Animator? {
         return NavigationAnimator()
     }
     
@@ -217,7 +217,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     ///
     /// - Parameter child: Child coordinator.
     /// - Returns: Animator.
-    override public func animator<C>(forDismissingChild child: SceneCoordinator<C>) -> Animator? {
+    override open func animator<C>(forDismissingChild child: SceneCoordinator<C>) -> Animator? {
         return NavigationAnimator()
     }
 }
