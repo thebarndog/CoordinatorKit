@@ -18,9 +18,12 @@ public protocol Storyboarded: class {
     static func storyboardInstance() -> Self
 }
 
-extension Storyboarded where Self : UIViewController {
+extension Storyboarded where Self : NSObject {
     
-    public static var storyboardIdentifier: String { return "\(self)".components(separatedBy: ".").last! }
+    public static var storyboardIdentifier: String { return classString }
+}
+
+extension Storyboarded where Self : UIViewController {
     
     public static func storyboardInstance() -> Self {
         

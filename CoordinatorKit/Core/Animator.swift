@@ -15,8 +15,8 @@ public protocol Animator {
 
     init()
     
-    func animate<T, U>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback?)
-    func dismiss<T>(coordinator: SceneCoordinator<T>, completion: AnimationCallback?)
+    func animate<T: UIViewController, U: UIViewController>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback?)
+    func dismiss<T: UIViewController>(coordinator: SceneCoordinator<T>, completion: AnimationCallback?)
     
 }
 
@@ -25,11 +25,11 @@ public struct SceneAnimator: Animator {
 
     public init() {}
     
-    public func animate<T, U>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback? = nil) {
+    public func animate<T: UIViewController, U: UIViewController>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback? = nil) {
         source.rootViewController.present(destination.rootViewController, animated: true, completion: completion)
     }
     
-    public func dismiss<T>(coordinator: SceneCoordinator<T>, completion: AnimationCallback? = nil) {
+    public func dismiss<T: UIViewController>(coordinator: SceneCoordinator<T>, completion: AnimationCallback? = nil) {
         coordinator.rootViewController.dismiss(animated: true, completion: completion)
     }
     
@@ -40,13 +40,13 @@ public struct NavigationAnimator: Animator {
 
     public init() {}
     
-    public func animate<T, U>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback? = nil) {
+    public func animate<T: UIViewController, U: UIViewController>(from source: SceneCoordinator<T>, to destination: SceneCoordinator<U>, completion: AnimationCallback? = nil) {
         guard let navigationController = source.rootViewController as? UINavigationController else { return }
         navigationController.pushViewController(destination.rootViewController, animated: true)
         completion?()
     }
     
-    public func dismiss<T>(coordinator: SceneCoordinator<T>, completion: AnimationCallback? = nil) {
+    public func dismiss<T: UIViewController>(coordinator: SceneCoordinator<T>, completion: AnimationCallback? = nil) {
         
         guard let navigationCoordinator = coordinator.parent as? NavigationCoordinator else { return }
         navigationCoordinator.rootViewController.popViewController(animated: true)

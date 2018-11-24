@@ -27,6 +27,8 @@
 		C6B0DDAE1F3E520F003818D1 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */; };
 		F30A3FD421A81DB300DA500E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A3FD321A81DB300DA500E /* Extensions.swift */; };
 		F30A3FD621A8249F00DA500E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30A3FD521A8249F00DA500E /* Storyboarded.swift */; };
+		F39FE9B021A8FE4300F5910E /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FE9AF21A8FE4300F5910E /* NibLoadable.swift */; };
+		F39FE9B221A8FF3100F5910E /* SceneCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39FE9B121A8FF3100F5910E /* SceneCoordinating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabCoordinator.swift; path = Core/TabCoordinator.swift; sourceTree = "<group>"; };
 		F30A3FD321A81DB300DA500E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Core/Extensions.swift; sourceTree = "<group>"; };
 		F30A3FD521A8249F00DA500E /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboarded.swift; path = Core/Storyboarded.swift; sourceTree = "<group>"; };
+		F39FE9AF21A8FE4300F5910E /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NibLoadable.swift; path = Core/NibLoadable.swift; sourceTree = "<group>"; };
+		F39FE9B121A8FF3100F5910E /* SceneCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneCoordinating.swift; path = Core/SceneCoordinating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,16 +145,18 @@
 		C613225E1F3A8EFD00BD9FF8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */,
-				C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */,
-				C61322631F3A9C7000BD9FF8 /* CoordinatorDelegate.swift */,
-				C61322651F3B923B00BD9FF8 /* SceneCoordinator.swift */,
 				C680E0191F3BCFB80028A3E4 /* Animator.swift */,
+				C613225F1F3A8F2900BD9FF8 /* Coordinator.swift */,
+				C61322631F3A9C7000BD9FF8 /* CoordinatorDelegate.swift */,
+				F30A3FD321A81DB300DA500E /* Extensions.swift */,
+				C61322611F3A972D00BD9FF8 /* MulticastDelegate.swift */,
+				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
+				C61322651F3B923B00BD9FF8 /* SceneCoordinator.swift */,
+				F39FE9B121A8FF3100F5910E /* SceneCoordinating.swift */,
 				C680E01B1F3BD2960028A3E4 /* SceneCoordinatorDelegate.swift */,
 				C680E01D1F3BD4470028A3E4 /* Stack.swift */,
 				F30A3FD521A8249F00DA500E /* Storyboarded.swift */,
-				F30A3FD321A81DB300DA500E /* Extensions.swift */,
-				C680E01F1F3BD5790028A3E4 /* NavigationCoordinator.swift */,
+				F39FE9AF21A8FE4300F5910E /* NibLoadable.swift */,
 				C6B0DDAD1F3E520F003818D1 /* TabCoordinator.swift */,
 			);
 			name = Core;
@@ -282,11 +288,13 @@
 				C6B0DDAE1F3E520F003818D1 /* TabCoordinator.swift in Sources */,
 				C680E01A1F3BCFB80028A3E4 /* Animator.swift in Sources */,
 				C680E0201F3BD5790028A3E4 /* NavigationCoordinator.swift in Sources */,
+				F39FE9B221A8FF3100F5910E /* SceneCoordinating.swift in Sources */,
 				C680E01E1F3BD4470028A3E4 /* Stack.swift in Sources */,
 				F30A3FD421A81DB300DA500E /* Extensions.swift in Sources */,
 				C61322601F3A8F2900BD9FF8 /* Coordinator.swift in Sources */,
 				F30A3FD621A8249F00DA500E /* Storyboarded.swift in Sources */,
 				C61322621F3A972D00BD9FF8 /* MulticastDelegate.swift in Sources */,
+				F39FE9B021A8FE4300F5910E /* NibLoadable.swift in Sources */,
 				C61322641F3A9C7000BD9FF8 /* CoordinatorDelegate.swift in Sources */,
 				C61322661F3B923B00BD9FF8 /* SceneCoordinator.swift in Sources */,
 			);

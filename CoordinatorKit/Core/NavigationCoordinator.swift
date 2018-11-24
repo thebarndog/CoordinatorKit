@@ -22,7 +22,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     
     // MARK: - Initialization
     
-    required public init<C>(rootCoordinator: SceneCoordinator<C>) {
+    required public init<C: UIViewController>(rootCoordinator: SceneCoordinator<C>) {
         self.rootCoordinator = rootCoordinator
         super.init()
         rootViewController = UINavigationController(rootViewController: rootCoordinator.rootViewController)
@@ -59,7 +59,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     /// the root coordinator wasn't set via the initializer already.
     ///
     /// - Parameter coordinator: Root coordinator object.
-    public final func setRootCoordinator<C>(_ coordinator: SceneCoordinator<C>) {
+    public final func setRootCoordinator<C: UIViewController>(_ coordinator: SceneCoordinator<C>) {
         guard coordinatorStack.isEmpty, controllerStack.isEmpty, rootCoordinator == nil else {
             return
         }
@@ -74,7 +74,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     /// - Parameters:
     ///   - coordinator: Coordinator to push.
     ///   - animated: Should the push be animated.
-    public func pushCoordinator<C>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
+    public func pushCoordinator<C: UIViewController>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
         if let topCoordinator = coordinatorStack.peek() {
             pause(coordinator: topCoordinator)
         }
@@ -87,12 +87,15 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     ///
     /// - Parameter animated: Should the pop be animated.
     public func popCoordinator(animated: Bool = true) {
-        guard let coordinator = coordinatorStack.peek() as? SceneCoordinator, rootCoordinator != coordinator else { return }
-        stop(sceneCoordinator: coordinator)
+        guard let coordinator = coordinatorStack.peek(), rootCoordinator != coordinator else { return }
+        stop(coordinator: coordinator)
         coordinatorStack.pop()
         controllerStack.pop()
-        guard let topCoordinator = coordinatorStack.peek(), topCoordinator.isPaused else { return }
-        resume(coordinator: topCoordinator)
+        
+        rootViewController.popViewController(animated: animated)
+        
+        guard let nextCoordinator = coordinatorStack.peek(), nextCoordinator.isPaused else { return }
+        resume(coordinator: nextCoordinator)
     }
     
     /// Pops to a given coordinator on the navigation stack.
@@ -100,13 +103,13 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
     /// - Parameters:
     ///   - coordinator: Coordinator to pop to.
     ///   - animated: Should the pop be animated.
-    public func popToCoordinator<C>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
+    public func popToCoordinator<C: UIViewController>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
         
         guard children.contains(coordinator) else { return }
         
         while coordinatorStack.peek() != coordinator {
             
-            guard let topCoordinator = coordinatorStack.peek() as? SceneCoordinator else { continue }
+            guard let topCoordinator = coordinatorStack.peek() else { continue }
             guard rootCoordinator != topCoordinator else { break }
             stop(coordinator: topCoordinator)
             coordinatorStack.pop()
@@ -115,7 +118,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
         
         rootViewController.popToViewController(coordinator.rootViewController, animated: animated)
         
-        guard let topCoordinator = coordinatorStack.peek(), topCoordinator.isPaused else { return }
+        guard let topCoordinator = coordinatorStack.peek() as? SceneCoordinator<C>, topCoordinator.isPaused else { return }
         resume(coordinator: topCoordinator)
     }
     
@@ -127,7 +130,7 @@ public class NavigationCoordinator: SceneCoordinator<UINavigationController>, UI
         
         while coordinatorStack.peek() != rootCoordinator {
             
-            guard let topCoordinator = coordinatorStack.peek() as? SceneCoordinator else { continue }
+            guard let topCoordinator = coordinatorStack.peek() else { continue }
             stop(coordinator: topCoordinator)
             coordinatorStack.pop()
             controllerStack.pop()
