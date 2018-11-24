@@ -42,6 +42,7 @@ open class NavigationCoordinator<N: UINavigationController>: SceneCoordinator<N>
         rootCoordinator = nil
         super.init()
         self.rootViewController = rootViewController
+        configure()
     }
     
     // MARK: - Configuration
@@ -65,6 +66,8 @@ open class NavigationCoordinator<N: UINavigationController>: SceneCoordinator<N>
         rootViewController.pushViewController(coordinator.rootViewController, animated: false)
         coordinatorStack.push(coordinator)
         controllerStack.push(coordinator.rootViewController)
+        configure()
+        start(coordinator: coordinator)
     }
     
     /// Push a coordinator onto the navigation coordinator.
@@ -73,6 +76,9 @@ open class NavigationCoordinator<N: UINavigationController>: SceneCoordinator<N>
     ///   - coordinator: Coordinator to push.
     ///   - animated: Should the push be animated.
     public func pushCoordinator<C>(coordinator: SceneCoordinator<C>, animated: Bool = true) {
+        
+        guard !coordinatorStack.isEmpty else { return }
+        
         if let topCoordinator = coordinatorStack.peek() {
             pause(coordinator: topCoordinator)
         }
@@ -138,15 +144,6 @@ open class NavigationCoordinator<N: UINavigationController>: SceneCoordinator<N>
         
         guard let topCoordinator = coordinatorStack.peek(), topCoordinator == rootCoordinator else { return }
         resume(coordinator: topCoordinator)
-    }
-    
-    /// Hide or show the navigation bar.
-    ///
-    /// - Parameters:
-    ///   - hidden: Should the bar be hidden or shown.
-    ///   - animated: Should the tranisition be animated.
-    func setNavigationBar(hidden: Bool, animated: Bool = false) {
-        rootViewController.setNavigationBarHidden(hidden, animated: animated)
     }
     
     // MARK: - Coordinator
