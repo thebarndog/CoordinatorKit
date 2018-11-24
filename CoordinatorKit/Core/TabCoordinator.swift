@@ -19,35 +19,35 @@ open class TabCoordinator: SceneCoordinator<UITabBarController>, UITabBarControl
         }
     }
     
-    public init<A: UIViewController>(_ coordinator: SceneCoordinator<A>) {
+    public init<A>(_ coordinator: SceneCoordinator<A>) {
         coordinators = [coordinator]
         controllers = [coordinator.rootViewController]
         super.init()
         commonInit()
     }
     
-    public init<A: UIViewController, B: UIViewController>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>) {
+    public init<A, B>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>) {
         coordinators = [a, b]
         controllers = [a.rootViewController, b.rootViewController]
         super.init()
         commonInit()
     }
     
-    public init<A: UIViewController, B: UIViewController, C: UIViewController>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>) {
+    public init<A, B, C>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>) {
         coordinators = [a, b, c]
         controllers = [a.rootViewController, b.rootViewController, c.rootViewController]
         super.init()
         commonInit()
     }
     
-    public init<A: UIViewController, B: UIViewController, C: UIViewController, D: UIViewController>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>, _ d: SceneCoordinator<D>) {
+    public init<A, B, C, D>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>, _ d: SceneCoordinator<D>) {
         coordinators = [a, b, c, d]
         controllers = [a.rootViewController, b.rootViewController, c.rootViewController, d.rootViewController]
         super.init()
         commonInit()
     }
     
-    public init<A: UIViewController, B: UIViewController, C: UIViewController, D: UIViewController, E: UIViewController>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>, _ d: SceneCoordinator<D>, _ e: SceneCoordinator<E>) {
+    public init<A, B, C, D, E>(_ a: SceneCoordinator<A>, _ b: SceneCoordinator<B>, _ c: SceneCoordinator<C>, _ d: SceneCoordinator<D>, _ e: SceneCoordinator<E>) {
         coordinators = [a, b, c, d, e]
         controllers = [a.rootViewController, b.rootViewController, c.rootViewController, d.rootViewController, e.rootViewController]
         super.init()

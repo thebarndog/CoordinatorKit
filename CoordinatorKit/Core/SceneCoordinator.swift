@@ -14,12 +14,12 @@ public typealias SceneCompletionBlock = () -> ()
 /// Coordinator used to represent a scene or a single screen in an application.
 /// Scene coordinators have a 1:1 relationship with a view controller that they
 /// manage.
-open class SceneCoordinator<Controller: SceneCoordinating>: Coordinator {
+open class SceneCoordinator<Controller: UIViewController>: Coordinator {
     
     public var rootViewController: Controller
     
     required public init() {
-        rootViewController = Controller.instance()
+        rootViewController = Controller()
         super.init()
     }
     
@@ -52,7 +52,7 @@ open class SceneCoordinator<Controller: SceneCoordinating>: Coordinator {
     ///
     /// - Note The coordinator uses the animator of the coordinator being started.
     /// - Parameter sceneCoordinator: Child coordinator to start.
-    public final func start<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) where Controller : UIViewController {
+    public final func start<C>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.start(coordinator: sceneCoordinator)
         let animator = self.animator(forPresentingChild: sceneCoordinator)
         animator?.animate(from: self, to: sceneCoordinator, completion: completion)
@@ -64,7 +64,7 @@ open class SceneCoordinator<Controller: SceneCoordinating>: Coordinator {
     ///
     /// - Note The coordinator uses the animator of the coordinator being stopped.
     /// - Parameter sceneCoordinator: Child coordinator to stop.
-    public final func stop<C: UIViewController>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) where Controller : UIViewController {
+    public final func stop<C>(sceneCoordinator: SceneCoordinator<C>, completion: SceneCompletionBlock? = nil) {
         super.stop(coordinator: sceneCoordinator)
         let animator = self.animator(forDismissingChild: sceneCoordinator)
         animator?.dismiss(coordinator: sceneCoordinator, completion: completion)
